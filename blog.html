@@ -1,0 +1,350 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>KWC Parks &amp; Trails</title>
+    <meta charset="UTF-8">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/commons.js"></script>
+    <script>
+        //side menu code
+        // adjust depending on page
+        let top_adjust = 0
+        let height_vh = 100
+        function calculate_menu() {
+
+            $('#hamburger_menu').click(() => {
+                let nav_coods = window.get_coordinates($('nav'))
+                window.side_menu($('#hidden_menu'), undefined, { top: nav_coods.top + top_adjust, left: (nav_coods.left + nav_coods.width) - 250, width: '250px', height: `${height_vh}vh` });
+            });
+            $('.expand_menu').click(evt => {
+                window.expand_menu($('.expand_menu'), evt);
+            });
+        }
+        $(() => {
+          calculate_menu()
+          $(window).resize(function() {
+             $('#hidden_menu').css('display','none');
+          });
+        })
+    </script>
+  </head>
+  <body>
+    <div id="container" class="blog">
+    <nav class="blog">
+        <div class="div_menu_first" ><span><a href="index.html">Parks &amp; Trails</a> </span></div>
+        <div class="menu_spacer"></div>
+        <ul id="menu">
+          <li>
+              <a href="index.html?state=final">
+                <div class="div_menu">
+                  Home
+                </div>
+              </a>
+          </li>
+          <li>
+             <a href="blog.html">
+                <div class="div_menu">
+                  Blog
+                </div>
+              </a>
+          </li>
+          <li>
+             <a href="contactus.html">
+                <div class="div_menu">
+                  Contact Us
+                </div>
+              </a>
+          </li>
+          <li>
+              <div class="div_menu">
+                <img id="hamburger_menu" src="images/menu.svg" alt="hamburger menu"/>
+              </div>
+          </li>
+        </ul>
+    </nav>
+    <main class="blog">
+      <article id="presentation">
+
+        <section id="p_container">
+          <div class="p_blur">
+          <div class="text">
+            <div>
+              The Best
+              Hiking Trails
+            </div>
+            <div>
+              near Kitchener,
+              Waterloo and Cambridge
+            </div>
+          </div>
+          </div>
+        </section>
+
+        <section class="p_section">
+          <div id="betchel" class="p_image">
+          </div>
+          <div class="p_section_title p_white">
+            Betchel Park
+          </div>
+          <div class="p_white">
+          </div>
+          <div class="p_white_last">
+          </div>
+          <div class="p_section_text">
+              <span><strong>Distance:</strong> 3.2 km loop<span>
+              <span><strong>Time:</strong> 45 minutes<span>
+              <br>
+              <span>
+                This trail is designed for a quick in-and-out hiker’s boost. With wood chips at your feet and a natural forest surrounding all around, the small but beautiful trail will have you gazing up at the majestic scenery.
+                How do I get to the trailhead?: This trail is located at 185 Bridge St. in Waterloo.
+                Read more about this trail: <a href="https://waterloo.ca">waterloo.ca</a>
+              </span>
+          </div>
+        </section>
+
+        <section class="p_section">
+          <div id="ironhorse" class="p_image">
+          </div>
+          <div class="p_section_title p_white">
+              Iron Horse Trail
+          </div>
+          <div class="p_white">
+          </div>
+          <div class="p_white_last">
+          </div>
+          <div class="p_section_text">
+              <span><strong>Distance:</strong> 5.5 km<span>
+              <span><strong>Time:</strong> 1 hour <span>
+              <br>
+              <span>
+              This paved path is ideal for commuters walking from Kitchener to Waterloo or for lovers of history and scenic routes. As part of the Trans Canada Trail, it joins the two cities to preserve the former railway corridor.  
+              How do I get to the trailhead?: Runs between Erb St. W in Waterloo and Ottawa Street in Kitchener.    
+              Read more about this trail: <a href="https://ontariotrails.on.ca">ontariotrails.on.ca</a>
+              </span>
+          </div>
+        </section>
+
+        <section class="p_section">
+          <div id="laurel" class="p_image">
+          </div>
+          <div class="p_section_title p_white">
+              Laurel Creek Trail
+          </div>
+          <div class="p_white">
+          </div>
+          <div class="p_white_last">
+          </div>
+          <div class="p_section_text">
+              <span><strong>Distance:</strong> 4.5 km<span>
+              <span><strong>Time:</strong> 1 hour <span>
+              <br>
+              <span>
+              Here's a sandy beach to suntan and a smooth path to hike. Trek the Blue, Green or Red Trail near the reservoir and then make your way back into town for some food and shopping. This is the rural urbanites dream.
+              How do I get to the trailhead?: You can access the trail from 625 Westmount Rd. N., Waterloo.
+              Read more about this trail: <a href="https://grandriver.ca">grandriver.ca</a>
+              </span>
+          </div>
+        </section>
+
+        <section class="p_section">
+          <div id="westside" class="p_image">
+          </div>
+          <div class="p_section_title p_white">
+              West Side Trails
+          </div>
+          <div class="p_white">
+          </div>
+          <div class="p_white_last">
+          </div>
+          <div class="p_section_text">
+              <span><strong>Distance:</strong> 12 km total<span>
+              <span><strong>Time:</strong> 2 - 3 hours <span>
+              <br>
+              <span>
+              Birders, bring your binoculars. Throughout this hike you’ll notice rare plants and migratory birds, and you’ll want to get a good look. Enjoy the view with a side of steep and challenging slopes.  
+              How do I get to the trailhead?: This trail can be accessed from Laurelwood Drive.
+              Read more about this trail: <a href="https://ontariotrails.on.ca">ontariotrails.on.ca</a>
+              </span>
+          </div>
+        </section>
+
+        <section class="p_section">
+          <div id="rattlesnake" class="p_image">
+          </div>
+          <div class="p_section_title p_white">
+              Rattlesnake Point Trail
+          </div>
+          <div class="p_white">
+          </div>
+          <div class="p_white_last">
+          </div>
+          <div class="p_section_text">
+              <span><strong>Distance:</strong> 13 km total<span>
+              <span><strong>Time:</strong> 2 - 3 hours <span>
+              <br>
+              <span>
+              Whether you’re in need of a therapeutic walk through grassy meadows or are a rock climber looking for a challenge, this trail is for you. You’ll come for the walk but stay to overlook the Lowville Valley.  
+              How do I get to the trailhead?: The trail is located near Milton.
+              Read more about this trail: <a href="https://conservationhalton.ca">conservationhalton.ca</a>
+              </span>
+          </div>
+        </section>
+
+        <section class="p_section">
+          <div id="elora" class="p_image">
+          </div>
+          <div class="p_section_title p_white">
+              Elora Gorge Trail
+          </div>
+          <div class="p_white">
+          </div>
+          <div class="p_white_last">
+          </div>
+          <div class="p_section_text">
+              <span><strong>Distance:</strong> 7.2 km loop<span>
+              <span><strong>Time:</strong> 1.5 - 2 hours <span>
+              <br>
+              <span>
+              Get sweaty while hiking this scenic trail, because you have the option to go tubing afterwards. This Ontario-famous spot is known for its 20-metre-tall waterfall, limestone cliffs and breathtaking gorge.
+              How do I get to the trailhead?: Park along Mill St. 
+              Read more about this trail: <a href="https://alltrails.com">alltrails.com</a>
+              </span>
+          </div>
+        </section>
+
+        <section class="p_section">
+          <div id="kissing" class="p_image">
+          </div>
+          <div class="p_section_title p_white">
+              Kissing Bridge Trailway
+          </div>
+          <div class="p_white">
+          </div>
+          <div class="p_white_last">
+          </div>
+          <div class="p_section_text">
+              <span><strong>Distance:</strong> 45 km <span>
+              <span><strong>Time:</strong> Varies <span>
+              <br>
+              <span>
+              This abandoned-railway-turned-trail weaves through both forest and city to give you a taste of southwestern Ontario. The wetlands will take you to the last covered bridge in Ontario. Most explorers hike this flat trail for an hour or two before turning around.  
+              How do I get to the trailhead?: This trail runs from Guelph to Millbank.
+              Read more about this trail: <a href="https://kissingbridgetrailway.ca">kissingbridgetrailway.ca</a> 
+              </span>
+          </div>
+        </section>
+        <section class="p_section">
+          <div id="walter" class="p_image">
+          </div>
+          <div class="p_section_title p_white">
+              Walter Bean Trail
+          </div>
+          <div class="p_white">
+          </div>
+          <div class="p_white_last">
+          </div>
+          <div class="p_section_text">
+              <span><strong>Distance:</strong> 78 km<span>
+              <span><strong>Time:</strong> Varies <span>
+              <br>
+              <span>
+              A cross-country type tour over bridges, along the river and, at times, near the highway. Hike as long as you want before turning around.
+              How do I get to the trailhead? There are several access points, including one at RIM Park in Waterloo.
+              Read more: <a href="https://waterloo.ca">waterloo.ca</a>
+              </span>
+          </div>
+        </section>
+        <section class="p_section">
+          <div id="starkey" class="p_image">
+          </div>
+          <div class="p_section_title p_white">
+              Starkey Hill Loop Trail
+          </div>
+          <div class="p_white">
+          </div>
+          <div class="p_white_last">
+          </div>
+          <div class="p_section_text">
+              <span><strong>Distance:</strong> 4 km<span>
+              <span><strong>Time:</strong> 1 hour <span>
+              <br>
+              <span>
+              This trail offers hiking fun for the whole family with mild inclines, gorgeous wetlands and luscious woods. From the highest hill, you can enjoy a well-deserved rest—before tackling the up-down slopes on the way back.
+              How do I get to the trailhead?: Park at the lot on Arkell Road near Guelph.
+              Read more about this trail: <a href="https://agrandriver.ca">agrandriver.ca</a>
+              </span>
+          </div>
+        </section>
+        <section class="p_section">
+          <div id="shade" class="p_image">
+          </div>
+          <div class="p_section_title p_white">
+              Shade's Mills Trails
+          </div>
+          <div class="p_white">
+          </div>
+          <div class="p_white_last">
+          </div>
+          <div class="p_section_text">
+              <span><strong>Distance:</strong> 12 km variety<span>
+              <span><strong>Time:</strong> 1 - 4 hours <span>
+              <br>
+              <span>
+              Pick from multiple trails and enjoy what has been called “Cambridge’s Best-Kept Secret.” Come prepared with your fishing gear – you’ll be able to catch northern pike, perch and largemouth/smallmouth bass. Or, if you prefer, stay on the water in a canoe or kayak.
+              How do I get to the trailhead?: This trail is in Shade’s Mills Conservation Area, a day-use park located in Cambridge.
+              Read more about this trail: <a href="https://explorewaterlooregion.com">explorewaterlooregion.com</a> 
+              </span>
+          </div>
+        </section>
+      </article>
+    </main>
+    <footer class="blog">
+    <div id="footer_container">
+      <span>© 2021  Kitchener | 200 King Street West, Kitchener, Ontario | Telephone: 519-741-2345, TTY: 1-866-969-9994</span>
+      <ul id="footer_menu">
+        <li><a href="">Privacy</a></li>
+        <li><a href="">Accessibility</a></li>
+        <li><a href="">Website policy</a></li>
+        <li><a href="">Sitemap</a></li>
+      </ul>
+    </div>
+    </footer>
+    </div>
+    <div id="hidden_side_container">
+      <ul id="hidden_menu">
+          <li>
+            <div class="div_hidden_menu">
+              <div class="div_hidden_menu_item">
+                <span class="spacer"></span>
+                <span class="li_text">Waterloo</span>
+                <span class="spacer"></span>
+                <span class="expand_menu" >+</span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="div_hidden_menu">
+              <div class="div_hidden_menu_item">
+                <span class="spacer"></span>
+                <span class="li_text">Kitchener</span>
+                <span class="spacer"></span>
+                <span class="expand_menu">+</span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="div_hidden_menu">
+              <div class="div_hidden_menu_item">
+                <span class="spacer"></span>
+                <span class="li_text">Cambridge</span>
+                <span class="spacer"></span>
+                <span class="expand_menu">+</span>
+              </div>
+            </div>
+          </li>
+      </ul>
+    </div>
+  </body>
+</html>

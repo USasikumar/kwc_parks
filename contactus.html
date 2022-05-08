@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>KWC Parks &amp; Trails</title>
+    <meta charset="UTF-8">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/commons.js"></script>
+    <script src="js/contact.js"></script>
+    <script>
+        //side menu code
+        // adjust depending on page
+        let top_adjust = 0
+        let height_vh = 100
+        function calculate_menu() {
+
+            $('#hamburger_menu').click(() => {
+                let nav_coods = window.get_coordinates($('nav'))
+                window.side_menu($('#hidden_menu'), undefined, { top: nav_coods.top + top_adjust, left: (nav_coods.left + nav_coods.width) - 250, width: '250px', height: `${height_vh}vh` });
+            });
+            $('.expand_menu').click(evt => {
+                window.expand_menu($('.expand_menu'), evt);
+            });
+        }
+        $(() => {
+          calculate_menu()
+          $(window).resize(function() {
+             $('#hidden_menu').css('display','none');
+          });
+        })
+    </script>
+</head>
+
+<body>
+  <div id="container" class="contactus">
+    <nav class="contactus">
+        <div class="div_menu_first" ><span><a href="index.html">Parks &amp; Trails</a> </span></div>
+        <div class="menu_spacer"></div>
+        <ul id="menu">
+          <li>
+              <a href="index.html?state=final">
+                <div class="div_menu">
+                  Home
+                </div>
+              </a>
+          </li>
+          <li>
+             <a href="blog.html">
+                <div class="div_menu">
+                  Blog
+                </div>
+              </a>
+          </li>
+          <li>
+             <a href="contactus.html">
+                <div class="div_menu">
+                  Contact Us
+                </div>
+              </a>
+          </li>
+          <li>
+              <div class="div_menu">
+                <img id="hamburger_menu" src="images/menu.svg" alt="hamburger menu"/>
+              </div>
+          </li>
+        </ul>
+    </nav>
+    <main class="contactus">
+       <section id="second_container">
+            <div id="contact_container">
+                <div>
+                    <span>
+                        <h2>Contact Us </h2>
+                    </span>
+                </div>
+                    <p>We have made it easier than ever for you to connect with us.
+                    <br>You can connect with us online,in person,by email,through social media. </p>
+                </div>
+        </section>
+        <section>
+            <div id="contactus_container">
+                <h2>Online</h2>
+                <p>Send us an email if you have concern</p>
+                <h2>Report a problem</h2>
+                <p>If you see something listed below that needs our attention,report a problem online.</p>
+                <ul>
+                  <li> graffitti</li>
+                  <li>needles</li>
+                  <li>litter in a playground,park or trail</li>
+                  <li>parking</li>
+                  <li>property standards</li>
+                  <li>potholes</li>
+                  <li>sidewalk show clearing</li>
+                  <li>sidewalk trip hazards</li>
+                  <li>trial surface maintenance</li>
+                </ul>
+                <p>If your concern is not listed,it may fall under the Region of Waterloo or another organization.</p>
+                <p>Visit our coyotes and wildlife page for information about:</p>
+                <ul>
+                  <li>Sick ,injured or orphaned animals</li>
+                  <li>dead animals</li>
+                  <li>pests</li>
+                </ul>
+                <h2>Contact Us</h2>
+                    <form name="contact" id="contact">
+                      <label for="name">Name:</label>
+                      <input type="text" class="form-control" placeholder="Name*" id="name" name="name">
+                      <label for="mobile">Phone:</label>
+                      <input type="text" class="form-control" placeholder="Mobile*" id="mobile" name="mobile">
+                      <label for="email">Email:</label>
+                      <input type="text" class="form-control" placeholder="Email*" id="email" name="email">
+                      <label for="message">Message:</label>
+                      <textarea name="message" placeholder=" Type your message ... " id="message"></textarea>
+                      <label for="name"></label>
+                      <input type="submit" id="submit" value="Submit">
+                    </form>
+
+          </div>
+        </section>
+    </main>
+    <footer class="contactus">
+    <div id="footer_container">
+      <span>© 2021  Kitchener | 200 King Street West, Kitchener, Ontario | Telephone: 519-741-2345, TTY: 1-866-969-9994</span>
+      <ul id="footer_menu">
+        <li><a href="">Privacy</a></li>
+        <li><a href="">Accessibility</a></li>
+        <li><a href="">Website policy</a></li>
+        <li><a href="">Sitemap</a></li>
+      </ul>
+    </div>
+    </footer>
+    </div>
+    <div id="hidden_side_container">
+      <ul id="hidden_menu">
+          <li>
+            <div class="div_hidden_menu">
+              <div class="div_hidden_menu_item">
+                <span class="spacer"></span>
+                <span class="li_text">Waterloo</span>
+                <span class="spacer"></span>
+                <span class="expand_menu" >+</span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="div_hidden_menu">
+              <div class="div_hidden_menu_item">
+                <span class="spacer"></span>
+                <span class="li_text">Kitchener</span>
+                <span class="spacer"></span>
+                <span class="expand_menu">+</span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="div_hidden_menu">
+              <div class="div_hidden_menu_item">
+                <span class="spacer"></span>
+                <span class="li_text">Cambridge</span>
+                <span class="spacer"></span>
+                <span class="expand_menu">+</span>
+              </div>
+            </div>
+          </li>
+      </ul>
+    </div>
+</body>
+</html>

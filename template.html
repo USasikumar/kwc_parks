@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/commons.js"></script>
+    <script>
+         //side menu code
+        // adjust depending on page
+        let top_adjust = 50
+        let height_vh = 80
+        $(() => {
+            let nav_coods = window.get_coordinates($('nav'))
+            $('#hamburger_menu').click(() => {
+                window.side_menu($('#hidden_menu'),undefined,{top:nav_coods.top+top_adjust,left:(nav_coods.left + nav_coods.width)-250,width:'250px',height:`${height_vh}vh`});
+            });
+
+            $('.expand_menu').click(evt => {
+                window.expand_menu($('.expand_menu'),evt);
+            }); 
+        })
+    </script>
+  </head>
+  <body>
+    <div id="container">
+    <nav class="blog">
+        <div class="div_menu_first" ><span><a href="index.html">Parks &amp; Trails</a> </span></div>
+        <div class="menu_spacer"></div>
+        <ul id="menu">
+          <li>
+              <a href="index.html?state=final">
+                <div class="div_menu">
+                  Home
+                </div>
+              </a>
+          </li>
+          <li>
+             <a href="blog.html">
+                <div class="div_menu">
+                  Blog
+                </div>
+              </a>
+          </li>
+          <li>
+             <a href="contactus.html">
+                <div class="div_menu">
+                  Contact Us
+                </div>
+              </a>
+          </li>
+          <li>
+              <div class="div_menu">
+                <img id="hamburger_menu" src="images/menu.svg" alt="hamburger menu"/>
+              </div>
+          </li>
+        </ul>
+    </nav>
+    <main class="blog">
+    </main>
+    <footer class="blog">
+    <div id="footer_container">
+      <span>© 2021  Kitchener | 200 King Street West, Kitchener, Ontario | Telephone: 519-741-2345, TTY: 1-866-969-9994</span>
+      <ul id="footer_menu">
+        <li><a href="">Privacy</a></li>
+        <li><a href="">Accessibility</a></li>
+        <li><a href="">Website policy</a></li>
+        <li><a href="">Sitemap</a></li>
+      </ul>
+    </div>
+
+    </footer>
+    </div>
+    <div id="hidden_side_container">
+      <ul id="hidden_menu">
+          <li>
+            <div class="div_hidden_menu">
+              <div class="div_hidden_menu_item">
+                <span class="spacer"></span>
+                <span class="li_text">Waterloo</span>
+                <span class="spacer"></span>
+                <span class="expand_menu" >+</span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="div_hidden_menu">
+              <div class="div_hidden_menu_item">
+                <span class="spacer"></span>
+                <span class="li_text">Kitchener</span>
+                <span class="spacer"></span>
+                <span class="expand_menu">+</span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="div_hidden_menu">
+              <div class="div_hidden_menu_item">
+                <span class="spacer"></span>
+                <span class="li_text">Cambridge</span>
+                <span class="spacer"></span>
+                <span class="expand_menu">+</span>
+              </div>
+            </div>
+          </li>
+      </ul>
+    </div>
+  </body>
+</html>

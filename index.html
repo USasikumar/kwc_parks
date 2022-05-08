@@ -1,0 +1,214 @@
+<!-- Sweta 5195770762 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>KWC Parks &amp; Trails</title>
+    <meta charset="UTF-8">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/commons.js"></script>
+    <script src="js/landing_script.js"></script>
+    <script>
+        //side menu code
+        // adjust depending on page
+        let top_adjust = 0
+        let height_vh = 100
+        function calculate_menu() {
+            $('#hamburger_menu').click(() => {
+                let nav_coods = window.get_coordinates($('nav'))
+                window.side_menu($('#hidden_menu'), undefined, { top: nav_coods.top + top_adjust, left: (nav_coods.left + nav_coods.width) - 250, width: '250px', height: `${height_vh}vh` });
+            });
+            $('.expand_menu').click(evt => {
+                window.expand_menu($('.expand_menu'), evt);
+            });
+        }
+        $(() => {
+          calculate_menu()
+          $(window).resize(function() {
+             $('#hidden_menu').css('display','none');
+          });
+        })
+    </script>
+  </head>
+  <body>
+
+    <div id="container">
+    <img id="splash_waterloo" class="clickable splash_img" src="images/wat1.svg" alt="waterloo logo"/>
+    <img id="splash_kitchener" class="clickable splash_img" src="images/kit1.svg" alt="kitchener logo"/>
+    <img id="splash_cambridge" class="clickable splash_img" src="images/cam1.svg" alt="cambridge logo"/>
+    <div id="splash_text" class="clickable splash_text">
+       <span>KWC</span>
+       <span>Parks &amp; Trails</span>
+    </div>
+    <nav class="landing">
+        <div class="div_menu_first" ><span><a href="index.html">Parks &amp; Trails</a> </span></div>
+        <div class="menu_spacer"></div>
+        <ul id="menu">
+          <li>
+              <a href="index.html?state=final">
+                <div class="div_menu">
+                  Home
+                </div>
+              </a>
+          </li>
+          <li>
+             <a href="blog.html">
+                <div class="div_menu">
+                  Blog
+                </div>
+              </a>
+          </li>
+          <li>
+             <a href="contactus.html">
+                <div class="div_menu">
+                  Contact Us
+                </div>
+              </a>
+          </li>
+          <li>
+              <div class="div_menu">
+                <img id="hamburger_menu" src="images/menu.svg" alt="hamburger menu"/>
+              </div>
+          </li>
+        </ul>
+    </nav>
+    <main class="landing">
+
+      <div id="waterloo_ctn" >
+        <div class="city_ctn">
+          <div class="logo_box">
+          <img src="images/wat3.svg" alt="waterloo logo darker"/>
+          </div>
+            <span class="logo_text">Waterloo</span>
+          <div class="city_desc">
+            Waterloo is a city in the Canadian province of Ontario. It is one of three cities in the Regional Municipality of Waterloo. Waterloo is situated about 94 km southwest of Toronto.
+          </div>
+          <div class="city_opts">
+            <div id="explore_ctn">
+              <img class="horn" src="images/hornleft.svg" alt=""/>
+                <span id="explore_txt">Explore</span>
+              <img class="horn" src="images/hornright.svg" alt=""/>
+            </div>
+            <div class ="city_opts_icons">
+              <!-- <img src="images/dogs.svg" alt="dogs"/> -->
+              <img class="icon_park" src="images/parks.svg" alt="waterloo park"/>
+              <div>
+              </div>
+              <img class="icon_trail" src="images/trails.svg" alt="waterloo trail"/>
+              <div>
+              </div>
+              <img class="icon_garden" src="images/gardens.svg" alt="waterloo garden"/>
+              <!-- <img src="images/gardens.svg" alt="dogs"/> -->
+            </div>
+          </div>
+          </div>
+      </div>
+      <div id="kitchener_ctn">
+        <div class="city_ctn">
+          <div class="logo_box">
+          <img src="images/kit3.svg" alt="kitcher logo darker"/>
+          </div>
+            <span class="logo_text">Kitchener</span>
+          <div class="city_desc">
+            Kitchener is a Canadian city in southeastern Ontario. Near sprawling Victoria Park, the Joseph Schneider Haus is a living-history museum recreating life in the 19th century.The Doon Heritage Village evokes early-1900s life with buildings such as farmhouses and a blacksmith shop.
+          </div>
+          <div class="city_opts">
+            <div id="explore_ctn">
+              <img class="horn" src="images/hornleft.svg" alt=""/>
+                <span id="explore_txt">Explore</span>
+              <img class="horn" src="images/hornright.svg" alt=""/>
+            </div>
+            <div class ="city_opts_icons">
+              <!-- <img src="images/dogs.svg" alt="dogs"/> -->
+              <img class="icon_park" src="images/parks.svg" alt="kitchener park"/>
+              <div>
+              </div>
+              <img class="icon_trail" src="images/trails.svg" alt="kitchener trail"/>
+              <div>
+              </div>
+              <img class="icon_garden" src="images/gardens.svg" alt="kitchener garden"/>
+              <!-- <img src="images/gardens.svg" alt="dogs"/> -->
+            </div>
+          </div>
+          </div>
+      </div>
+        <div id="cambridge_ctn">
+        <div  class="city_ctn">
+          <div class="logo_box">
+          <img src="images/cam3.svg" alt="cambridge logo darker"/>
+          </div>
+            <span class="logo_text">Cambridge</span>
+          <div class="city_desc">
+            Cambridge is a city in the Regional Municipality of Waterloo, Ontario, Canada, located at the confluence of the Grand and Speed rivers. Along with Kitchener and Waterloo, Cambridge is one of the three core cities of Canada's tenth-largest metropolitan area.
+          </div>
+          <div class="city_opts">
+            <div id="explore_ctn">
+              <img class="horn" src="images/hornleft.svg" alt=""/>
+                <span id="explore_txt">Explore</span>
+              <img class="horn" src="images/hornright.svg" alt=""/>
+            </div>
+            <div class ="city_opts_icons">
+              <!-- <img src="images/dogs.svg" alt="dogs"/> -->
+              <img class="icon_park" src="images/parks.svg" alt="cambridge park"/>
+              <div>
+              </div>
+              <img class="icon_trail" src="images/trails.svg" alt="cambridge trail"/>
+              <div>
+              </div>
+              <img class="icon_garden" src="images/gardens.svg" alt="cambridge garden"/>
+              <!-- <img src="images/gardens.svg" alt="dogs"/> -->
+            </div>
+          </div>
+          </div>
+      </div>
+    </main>
+    <footer class="landing">
+
+    <div id="footer_container">
+      <span>© 2021  Kitchener | 200 King Street West, Kitchener, Ontario | Telephone: 519-741-2345, TTY: 1-866-969-9994</span>
+      <ul id="footer_menu">
+        <li><a href="">Privacy</a></li>
+        <li><a href="">Accessibility</a></li>
+        <li><a href="">Website policy</a></li>
+        <li><a href="">Sitemap</a></li>
+      </ul>
+    </div>
+
+    </footer>
+    </div>
+    <div id="hidden_side_container">
+      <ul id="hidden_menu">
+          <li>
+            <div class="div_hidden_menu">
+              <div class="div_hidden_menu_item">
+                <span class="spacer"></span>
+                <span class="li_text">Waterloo</span>
+                <span class="spacer"></span>
+                <span class="expand_menu" >+</span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="div_hidden_menu">
+              <div class="div_hidden_menu_item">
+                <span class="spacer"></span>
+                <span class="li_text">Kitchener</span>
+                <span class="spacer"></span>
+                <span class="expand_menu">+</span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="div_hidden_menu">
+              <div class="div_hidden_menu_item">
+                <span class="spacer"></span>
+                <span class="li_text">Cambridge</span>
+                <span class="spacer"></span>
+                <span class="expand_menu">+</span>
+              </div>
+            </div>
+          </li>
+      </ul>
+    </div>
+  </body>
+</html>

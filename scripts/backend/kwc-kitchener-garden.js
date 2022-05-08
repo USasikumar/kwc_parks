@@ -1,0 +1,1 @@
+kitchener_garden=JSON.parse(`[]`)
